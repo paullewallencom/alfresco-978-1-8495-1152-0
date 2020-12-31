@@ -1,0 +1,9 @@
+<webscript>
+   <shortname>Post Book Review</shortname>
+   <description>Post a Review to a Book</description>
+   <url>/books/{isbn}/reviews</url>
+   <url>/books/{isbn}/reviews/</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="json">any</format>
+</webscript>

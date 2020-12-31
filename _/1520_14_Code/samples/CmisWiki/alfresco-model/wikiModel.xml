@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Bookshop Model -->
+
+<model name="wiki:wikiModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+   <description>Wiki Model for the A3WS Samples</description>
+   <author>Ugo Cei, Piergiorgio Lucidi</author>
+   <version>1.0</version>
+
+   <imports>
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+      <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+   </imports>
+
+   <namespaces>
+      <namespace uri="http://www.packtpub.com/a3ws/samples/wiki" prefix="wiki"/>
+   </namespaces>
+
+   <types>
+   
+      <type name="wiki:page">
+         <title>Wiki Page</title>
+         <parent>cm:content</parent>
+         <properties>
+         </properties>
+         <associations>
+            <association name="wiki:linkedPages">
+               <source>
+                  <mandatory>false</mandatory>
+                  <many>true</many>
+               </source>
+               <target>
+                  <class>wiki:page</class>
+                  <mandatory>false</mandatory>
+                  <many>true</many>
+               </target>
+            </association>
+         </associations>
+      </type>
+      
+   </types>
+   
+</model>

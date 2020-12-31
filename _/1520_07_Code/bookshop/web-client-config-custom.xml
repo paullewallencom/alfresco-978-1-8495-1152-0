@@ -1,0 +1,28 @@
+<alfresco-config>
+
+   <config evaluator="string-compare" condition="Content Wizards">
+      <content-types>
+         <type name="bs:book" />
+      </content-types>
+   </config>
+
+   <config evaluator="node-type" condition="bs:book">
+      <property-sheet>
+         <show-property name="bs:isbn" />
+         <show-property name="bs:publisher" />
+         <show-property name="bs:author" />
+         <show-property name="bs:price" />
+         <show-child-association name="bs:reviews" />
+      </property-sheet>
+   </config>
+
+   <config evaluator="node-type" condition="bs:review">
+      <property-sheet>
+         <show-property name="bs:reviewer_name" />
+         <show-property name="bs:reviewer_email" />
+         <show-property name="bs:review_rating" />
+         <show-property name="bs:approved" />
+      </property-sheet>
+   </config>
+
+</alfresco-config>

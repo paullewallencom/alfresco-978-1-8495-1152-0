@@ -1,0 +1,7 @@
+<webscript>
+   <shortname>Children</shortname>
+   <description>Lists the children of the Company Home folder</description>
+   <url>/children</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+</webscript>

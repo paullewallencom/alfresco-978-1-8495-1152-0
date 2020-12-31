@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom" 
+       xmlns:bs="http://www.packtpub.com/a3ws/samples/bookshop">
+   <title>A timeless masterpiece</title>
+   <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+   <updated>2003-12-13T18:30:02Z</updated>
+   <author>
+      <name>John Doe</name>
+      <email>johndoe@example.com</email>
+   </author>
+   <content type="text">The quick brown fox jumps over the lazy dog.</content>
+   <bs:rating>5</bs:rating>
+</entry>

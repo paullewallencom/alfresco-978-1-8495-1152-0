@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/" xmlns:cmis="http://docs.oasis-open.org/ns/cmis/core/200908/" xmlns:alf="http://www.alfresco.org" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+   <author>
+      <name>System</name>
+   </author>
+   <generator version="3.3.0 (2765)">Alfresco (Community)</generator>
+   <icon>http://localhost:8080/alfresco/images/logo/AlfrescoLogo16.ico</icon>
+   <id>urn:uuid:c883295b-8610-4aa8-82fe-f6f3064769a3-children</id>
+   <link rel="service" href="http://localhost:8080/alfresco/service/cmis"/>
+   <link rel="self" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3/children"/>
+   <link rel="via" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3"/>
+   <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3/descendants" type="application/cmistree+xml"/>
+   <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/foldertree" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3/tree" type="application/atom+xml;type=feed"/>
+   <link rel="first" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3/children?pageNo=1&amp;pageSize=-1&amp;guest=&amp;format=atomfeed" type="application/atom+xml;type=feed"/>
+   <link rel="last" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3/children?pageNo=1&amp;pageSize=-1&amp;guest=&amp;format=atomfeed" type="application/atom+xml;type=feed"/>
+   <title>Company Home Children</title>
+   <updated>2010-05-09T18:13:06.082+02:00</updated>
+   <opensearch:totalResults>4</opensearch:totalResults>
+   <opensearch:startIndex>0</opensearch:startIndex>
+   <opensearch:itemsPerPage>-1</opensearch:itemsPerPage>
+   <cmisra:numItems>4</cmisra:numItems>
+   <entry>
+      <author>
+         <name>System</name>
+      </author>
+      <content>9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e</content>
+      <id>urn:uuid:9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e</id>
+      <link rel="self" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e"/>
+      <link rel="edit" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/allowableactions" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e/allowableactions"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/relationships" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e/rels"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/policies" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e/pols"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/acl" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e/acl"/>
+      <link rel="up" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3" type="application/atom+xml;type=entry"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e/children" type="application/atom+xml;type=feed"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e/descendants" type="application/cmistree+xml"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/foldertree" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e/tree" type="application/atom+xml;type=feed"/>
+      <link rel="describedby" href="http://localhost:8080/alfresco/service/cmis/type/F:st:sites"/>
+      <link rel="service" href="http://localhost:8080/alfresco/service/cmis"/>
+      <published>2010-05-09T18:13:19.523+02:00</published>
+      <summary>Site Collaboration Spaces</summary>
+      <title>Sites</title>
+      <updated>2010-05-09T18:13:19.542+02:00</updated>
+      <app:edited>2010-05-09T18:13:19.542+02:00</app:edited>
+      <alf:icon>http://localhost:8080/alfresco/images/icons/space-icon-default-16.gif</alf:icon>
+      <cmisra:object>
+         <cmis:properties>
+            <cmis:propertyId propertyDefinitionId="cmis:allowedChildObjectTypeIds" displayName="Allowed Child Object Types Ids" queryName="cmis:allowedChildObjectTypeIds"/>
+            <cmis:propertyString propertyDefinitionId="cmis:lastModifiedBy" displayName="Last Modified By" queryName="cmis:lastModifiedBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectTypeId" displayName="Object Type Id" queryName="cmis:objectTypeId">
+               <cmis:value>F:st:sites</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyString propertyDefinitionId="cmis:path" displayName="Path" queryName="cmis:path">
+               <cmis:value>/Sites</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:name" displayName="Name" queryName="cmis:name">
+               <cmis:value>Sites</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:createdBy" displayName="Created by" queryName="cmis:createdBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectId" displayName="Object Id" queryName="cmis:objectId">
+               <cmis:value>workspace://SpacesStore/9d57852a-72c7-4cfa-93f4-a6adbcfe4c3e</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:creationDate" displayName="Creation Date" queryName="cmis:creationDate">
+               <cmis:value>2010-05-09T18:13:19.523+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <cmis:propertyString propertyDefinitionId="cmis:changeToken" displayName="Change token" queryName="cmis:changeToken"/>
+            <cmis:propertyId propertyDefinitionId="cmis:baseTypeId" displayName="Base Type Id" queryName="cmis:baseTypeId">
+               <cmis:value>cmis:folder</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:lastModificationDate" displayName="Last Modified Date" queryName="cmis:lastModificationDate">
+               <cmis:value>2010-05-09T18:13:19.542+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <cmis:propertyId propertyDefinitionId="cmis:parentId" displayName="Parent Id" queryName="cmis:parentId">
+               <cmis:value>workspace://SpacesStore/c883295b-8610-4aa8-82fe-f6f3064769a3</cmis:value>
+            </cmis:propertyId>
+            <alf:aspects>
+               <alf:appliedAspects>P:app:uifacets</alf:appliedAspects>
+               <alf:appliedAspects>P:cm:titled</alf:appliedAspects>
+               <alf:properties>
+                  <cmis:propertyString propertyDefinitionId="app:icon" displayName="Icon" queryName="app:icon">
+                     <cmis:value>space-icon-default</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:description" displayName="Description" queryName="cm:description">
+                     <cmis:value>Site Collaboration Spaces</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:title" displayName="Title" queryName="cm:title">
+                     <cmis:value>Sites</cmis:value>
+                  </cmis:propertyString>
+               </alf:properties>
+            </alf:aspects>
+         </cmis:properties>
+      </cmisra:object>
+      <cmisra:pathSegment>Sites</cmisra:pathSegment>
+   </entry>
+   <entry>
+      <author>
+         <name>System</name>
+      </author>
+      <content>c5518ce7-04ce-4076-8761-2efa5c875a84</content>
+      <id>urn:uuid:c5518ce7-04ce-4076-8761-2efa5c875a84</id>
+      <link rel="self" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84"/>
+      <link rel="edit" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/allowableactions" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84/allowableactions"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/relationships" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84/rels"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/policies" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84/pols"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/acl" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84/acl"/>
+      <link rel="up" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3" type="application/atom+xml;type=entry"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84/children" type="application/atom+xml;type=feed"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84/descendants" type="application/cmistree+xml"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/foldertree" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c5518ce7-04ce-4076-8761-2efa5c875a84/tree" type="application/atom+xml;type=feed"/>
+      <link rel="describedby" href="http://localhost:8080/alfresco/service/cmis/type/cmis:folder"/>
+      <link rel="service" href="http://localhost:8080/alfresco/service/cmis"/>
+      <published>2010-05-09T18:13:06.185+02:00</published>
+      <summary>User managed definitions</summary>
+      <title>Data Dictionary</title>
+      <updated>2010-05-09T18:13:06.214+02:00</updated>
+      <app:edited>2010-05-09T18:13:06.214+02:00</app:edited>
+      <alf:icon>http://localhost:8080/alfresco/images/icons/space-icon-default-16.gif</alf:icon>
+      <cmisra:object>
+         <cmis:properties>
+            <cmis:propertyId propertyDefinitionId="cmis:allowedChildObjectTypeIds" displayName="Allowed Child Object Types Ids" queryName="cmis:allowedChildObjectTypeIds"/>
+            <cmis:propertyString propertyDefinitionId="cmis:path" displayName="Path" queryName="cmis:path">
+               <cmis:value>/Data Dictionary</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectTypeId" displayName="Object Type Id" queryName="cmis:objectTypeId">
+               <cmis:value>cmis:folder</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyString propertyDefinitionId="cmis:lastModifiedBy" displayName="Last Modified By" queryName="cmis:lastModifiedBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:createdBy" displayName="Created by" queryName="cmis:createdBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:name" displayName="Name" queryName="cmis:name">
+               <cmis:value>Data Dictionary</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectId" displayName="Object Id" queryName="cmis:objectId">
+               <cmis:value>workspace://SpacesStore/c5518ce7-04ce-4076-8761-2efa5c875a84</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:creationDate" displayName="Creation Date" queryName="cmis:creationDate">
+               <cmis:value>2010-05-09T18:13:06.185+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <cmis:propertyString propertyDefinitionId="cmis:changeToken" displayName="Change token" queryName="cmis:changeToken"/>
+            <cmis:propertyId propertyDefinitionId="cmis:baseTypeId" displayName="Base Type Id" queryName="cmis:baseTypeId">
+               <cmis:value>cmis:folder</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyId propertyDefinitionId="cmis:parentId" displayName="Parent Id" queryName="cmis:parentId">
+               <cmis:value>workspace://SpacesStore/c883295b-8610-4aa8-82fe-f6f3064769a3</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:lastModificationDate" displayName="Last Modified Date" queryName="cmis:lastModificationDate">
+               <cmis:value>2010-05-09T18:13:06.214+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <alf:aspects>
+               <alf:appliedAspects>P:app:uifacets</alf:appliedAspects>
+               <alf:appliedAspects>P:cm:titled</alf:appliedAspects>
+               <alf:properties>
+                  <cmis:propertyString propertyDefinitionId="app:icon" displayName="Icon" queryName="app:icon">
+                     <cmis:value>space-icon-default</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:description" displayName="Description" queryName="cm:description">
+                     <cmis:value>User managed definitions</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:title" displayName="Title" queryName="cm:title">
+                     <cmis:value>Data Dictionary</cmis:value>
+                  </cmis:propertyString>
+               </alf:properties>
+            </alf:aspects>
+         </cmis:properties>
+      </cmisra:object>
+      <cmisra:pathSegment>Data Dictionary</cmisra:pathSegment>
+   </entry>
+   <entry>
+      <author>
+         <name>System</name>
+      </author>
+      <content>dd26fde6-1d70-48a1-9e26-933b3b0c6559</content>
+      <id>urn:uuid:dd26fde6-1d70-48a1-9e26-933b3b0c6559</id>
+      <link rel="self" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559"/>
+      <link rel="edit" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/allowableactions" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559/allowableactions"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/relationships" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559/rels"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/policies" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559/pols"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/acl" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559/acl"/>
+      <link rel="up" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3" type="application/atom+xml;type=entry"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559/children" type="application/atom+xml;type=feed"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559/descendants" type="application/cmistree+xml"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/foldertree" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/dd26fde6-1d70-48a1-9e26-933b3b0c6559/tree" type="application/atom+xml;type=feed"/>
+      <link rel="describedby" href="http://localhost:8080/alfresco/service/cmis/type/cmis:folder"/>
+      <link rel="service" href="http://localhost:8080/alfresco/service/cmis"/>
+      <published>2010-05-09T18:13:06.679+02:00</published>
+      <summary>The guest root space</summary>
+      <title>Guest Home</title>
+      <updated>2010-05-09T18:13:06.705+02:00</updated>
+      <app:edited>2010-05-09T18:13:06.705+02:00</app:edited>
+      <alf:icon>http://localhost:8080/alfresco/images/icons/space-icon-default-16.gif</alf:icon>
+      <cmisra:object>
+         <cmis:properties>
+            <cmis:propertyId propertyDefinitionId="cmis:allowedChildObjectTypeIds" displayName="Allowed Child Object Types Ids" queryName="cmis:allowedChildObjectTypeIds"/>
+            <cmis:propertyString propertyDefinitionId="cmis:path" displayName="Path" queryName="cmis:path">
+               <cmis:value>/Guest Home</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectTypeId" displayName="Object Type Id" queryName="cmis:objectTypeId">
+               <cmis:value>cmis:folder</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyString propertyDefinitionId="cmis:lastModifiedBy" displayName="Last Modified By" queryName="cmis:lastModifiedBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:createdBy" displayName="Created by" queryName="cmis:createdBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:name" displayName="Name" queryName="cmis:name">
+               <cmis:value>Guest Home</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectId" displayName="Object Id" queryName="cmis:objectId">
+               <cmis:value>workspace://SpacesStore/dd26fde6-1d70-48a1-9e26-933b3b0c6559</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:creationDate" displayName="Creation Date" queryName="cmis:creationDate">
+               <cmis:value>2010-05-09T18:13:06.679+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <cmis:propertyString propertyDefinitionId="cmis:changeToken" displayName="Change token" queryName="cmis:changeToken"/>
+            <cmis:propertyId propertyDefinitionId="cmis:baseTypeId" displayName="Base Type Id" queryName="cmis:baseTypeId">
+               <cmis:value>cmis:folder</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyId propertyDefinitionId="cmis:parentId" displayName="Parent Id" queryName="cmis:parentId">
+               <cmis:value>workspace://SpacesStore/c883295b-8610-4aa8-82fe-f6f3064769a3</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:lastModificationDate" displayName="Last Modified Date" queryName="cmis:lastModificationDate">
+               <cmis:value>2010-05-09T18:13:06.705+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <alf:aspects>
+               <alf:appliedAspects>P:app:uifacets</alf:appliedAspects>
+               <alf:appliedAspects>P:cm:titled</alf:appliedAspects>
+               <alf:properties>
+                  <cmis:propertyString propertyDefinitionId="app:icon" displayName="Icon" queryName="app:icon">
+                     <cmis:value>space-icon-default</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:description" displayName="Description" queryName="cm:description">
+                     <cmis:value>The guest root space</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:title" displayName="Title" queryName="cm:title">
+                     <cmis:value>Guest Home</cmis:value>
+                  </cmis:propertyString>
+               </alf:properties>
+            </alf:aspects>
+         </cmis:properties>
+      </cmisra:object>
+      <cmisra:pathSegment>Guest Home</cmisra:pathSegment>
+   </entry>
+   <entry>
+      <author>
+         <name>System</name>
+      </author>
+      <content>88e0adb5-9098-4d56-ba2f-a1b73139166f</content>
+      <id>urn:uuid:88e0adb5-9098-4d56-ba2f-a1b73139166f</id>
+      <link rel="self" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f"/>
+      <link rel="edit" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/allowableactions" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f/allowableactions"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/relationships" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f/rels"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/policies" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f/pols"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/acl" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f/acl"/>
+      <link rel="up" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/c883295b-8610-4aa8-82fe-f6f3064769a3" type="application/atom+xml;type=entry"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f/children" type="application/atom+xml;type=feed"/>
+      <link rel="down" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f/descendants" type="application/cmistree+xml"/>
+      <link rel="http://docs.oasis-open.org/ns/cmis/link/200908/foldertree" href="http://localhost:8080/alfresco/service/cmis/s/workspace:SpacesStore/i/88e0adb5-9098-4d56-ba2f-a1b73139166f/tree" type="application/atom+xml;type=feed"/>
+      <link rel="describedby" href="http://localhost:8080/alfresco/service/cmis/type/cmis:folder"/>
+      <link rel="service" href="http://localhost:8080/alfresco/service/cmis"/>
+      <published>2010-05-09T18:13:06.782+02:00</published>
+      <summary>User Homes</summary>
+      <title>User Homes</title>
+      <updated>2010-05-09T18:13:06.807+02:00</updated>
+      <app:edited>2010-05-09T18:13:06.807+02:00</app:edited>
+      <alf:icon>http://localhost:8080/alfresco/images/icons/space-icon-default-16.gif</alf:icon>
+      <cmisra:object>
+         <cmis:properties>
+            <cmis:propertyId propertyDefinitionId="cmis:allowedChildObjectTypeIds" displayName="Allowed Child Object Types Ids" queryName="cmis:allowedChildObjectTypeIds"/>
+            <cmis:propertyString propertyDefinitionId="cmis:path" displayName="Path" queryName="cmis:path">
+               <cmis:value>/User Homes</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectTypeId" displayName="Object Type Id" queryName="cmis:objectTypeId">
+               <cmis:value>cmis:folder</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyString propertyDefinitionId="cmis:lastModifiedBy" displayName="Last Modified By" queryName="cmis:lastModifiedBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:createdBy" displayName="Created by" queryName="cmis:createdBy">
+               <cmis:value>System</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyString propertyDefinitionId="cmis:name" displayName="Name" queryName="cmis:name">
+               <cmis:value>User Homes</cmis:value>
+            </cmis:propertyString>
+            <cmis:propertyId propertyDefinitionId="cmis:objectId" displayName="Object Id" queryName="cmis:objectId">
+               <cmis:value>workspace://SpacesStore/88e0adb5-9098-4d56-ba2f-a1b73139166f</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:creationDate" displayName="Creation Date" queryName="cmis:creationDate">
+               <cmis:value>2010-05-09T18:13:06.782+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <cmis:propertyString propertyDefinitionId="cmis:changeToken" displayName="Change token" queryName="cmis:changeToken"/>
+            <cmis:propertyId propertyDefinitionId="cmis:baseTypeId" displayName="Base Type Id" queryName="cmis:baseTypeId">
+               <cmis:value>cmis:folder</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyId propertyDefinitionId="cmis:parentId" displayName="Parent Id" queryName="cmis:parentId">
+               <cmis:value>workspace://SpacesStore/c883295b-8610-4aa8-82fe-f6f3064769a3</cmis:value>
+            </cmis:propertyId>
+            <cmis:propertyDateTime propertyDefinitionId="cmis:lastModificationDate" displayName="Last Modified Date" queryName="cmis:lastModificationDate">
+               <cmis:value>2010-05-09T18:13:06.807+02:00</cmis:value>
+            </cmis:propertyDateTime>
+            <alf:aspects>
+               <alf:appliedAspects>P:app:uifacets</alf:appliedAspects>
+               <alf:appliedAspects>P:cm:titled</alf:appliedAspects>
+               <alf:properties>
+                  <cmis:propertyString propertyDefinitionId="app:icon" displayName="Icon" queryName="app:icon">
+                     <cmis:value>space-icon-default</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:description" displayName="Description" queryName="cm:description">
+                     <cmis:value>User Homes</cmis:value>
+                  </cmis:propertyString>
+                  <cmis:propertyString propertyDefinitionId="cm:title" displayName="Title" queryName="cm:title">
+                     <cmis:value>User Homes</cmis:value>
+                  </cmis:propertyString>
+               </alf:properties>
+            </alf:aspects>
+         </cmis:properties>
+      </cmisra:object>
+      <cmisra:pathSegment>User Homes</cmisra:pathSegment>
+   </entry>
+</feed>

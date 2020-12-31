@@ -1,0 +1,8 @@
+<webscript>
+   <shortname>Update an existing book</shortname>
+   <description>Updates an existing book from an Atom entry</description>
+   <url>/books/{isbn}</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="atom">any</format>
+</webscript>

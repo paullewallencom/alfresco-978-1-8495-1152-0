@@ -1,0 +1,13 @@
+<webscript>
+   <shortname>Recent Documents</shortname>
+   <description>Lists the 10 most recently created or modified documents in the Guest Home space</description>
+   <url>/recent</url>
+   <authentication>guest</authentication>
+   <transaction>required</transaction>
+   <format default="rss">any</format>
+   <cache>
+      <never>false</never>
+      <public>false</public>
+      <mustrevalidate>true</mustrevalidate>
+   </cache>
+</webscript>

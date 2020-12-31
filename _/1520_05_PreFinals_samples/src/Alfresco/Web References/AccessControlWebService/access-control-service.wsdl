@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:acs="http://www.alfresco.org/ws/service/accesscontrol/1.0" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cms="http://www.alfresco.org/ws/model/content/1.0" name="access-control-service" targetNamespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.alfresco.org/ws/model/content/1.0" location="types.xsd" />
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.alfresco.org/ws/service/accesscontrol/1.0">
+      <xsd:simpleType name="AccessStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="acepted" />
+          <xsd:enumeration value="declined" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ACE">
+        <xsd:sequence>
+          <xsd:element name="authority" type="xsd:string" />
+          <xsd:element name="permission" type="xsd:string" />
+          <xsd:element name="accessStatus" type="acs:AccessStatus" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ACE" type="acs:ACE" />
+      <xsd:complexType name="ACL">
+        <xsd:sequence>
+          <xsd:element name="reference" type="cms:Reference" />
+          <xsd:element name="inheritPermissions" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="aces" type="acs:ACE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ACL" type="acs:ACL" />
+      <xsd:complexType name="GetPermissionsResult">
+        <xsd:sequence>
+          <xsd:element name="reference" type="cms:Reference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="permissions" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetPermissionsResult" type="acs:GetPermissionsResult" />
+      <xsd:complexType name="GetClassPermissionsResult">
+        <xsd:sequence>
+          <xsd:element name="className" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="permissions" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetClassPermissionsResult" type="acs:GetClassPermissionsResult" />
+      <xsd:complexType name="HasPermissionsResult">
+        <xsd:sequence>
+          <xsd:element name="reference" type="cms:Reference" />
+          <xsd:element name="permission" type="xsd:string" />
+          <xsd:element name="accessStatus" type="acs:AccessStatus" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="HasPermissionsResult" type="acs:HasPermissionsResult" />
+      <xsd:complexType name="OwnerResult">
+        <xsd:sequence>
+          <xsd:element name="reference" type="cms:Reference" />
+          <xsd:element name="owner" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="OwnerResult" type="acs:OwnerResult" />
+      <xsd:complexType name="AccessControlFault">
+        <xsd:sequence>
+          <xsd:element name="errorCode" type="xsd:int" />
+          <xsd:element name="message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AccessControlFault" type="acs:AccessControlFault" />
+      <xsd:element name="getACLs">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+            <xsd:element name="filter" type="acs:ACE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getACLsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="acls" type="acs:ACL" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addACEs">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="aces" type="acs:ACE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addACEsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="acls" type="acs:ACL" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removeACEs">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="aces" type="acs:ACE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removeACEsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="acls" type="acs:ACL" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPermissions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPermissionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="result" type="acs:GetPermissionsResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getClassPermissions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="classNames" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getClassPermissionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="result" type="acs:GetClassPermissionsResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hasPermissions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="permissions" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hasPermissionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="results" type="acs:HasPermissionsResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setInheritPermission">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+            <xsd:element name="inheritPermission" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setInheritPermissionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="acls" type="acs:ACL" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getOwners">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getOwnersResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="results" type="acs:OwnerResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setOwners">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="predicate" type="cms:Predicate" />
+            <xsd:element name="owner" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setOwnersResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="results" type="acs:OwnerResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getACLsRequest">
+    <wsdl:part name="parameters" element="acs:getACLs" />
+  </wsdl:message>
+  <wsdl:message name="getACLsResponse">
+    <wsdl:part name="parameters" element="acs:getACLsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addACEsRequest">
+    <wsdl:part name="parameters" element="acs:addACEs" />
+  </wsdl:message>
+  <wsdl:message name="addACEsResponse">
+    <wsdl:part name="parameters" element="acs:addACEsResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeACEsRequest">
+    <wsdl:part name="parameters" element="acs:removeACEs" />
+  </wsdl:message>
+  <wsdl:message name="removeACEsResponse">
+    <wsdl:part name="parameters" element="acs:removeACEsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPermissionsRequest">
+    <wsdl:part name="parameters" element="acs:getPermissions" />
+  </wsdl:message>
+  <wsdl:message name="getPermissionsResponse">
+    <wsdl:part name="parameters" element="acs:getPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClassPermissionsRequest">
+    <wsdl:part name="parameters" element="acs:getClassPermissions" />
+  </wsdl:message>
+  <wsdl:message name="getClassPermissionsResponse">
+    <wsdl:part name="parameters" element="acs:getClassPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="hasPermissionsRequest">
+    <wsdl:part name="parameters" element="acs:hasPermissions" />
+  </wsdl:message>
+  <wsdl:message name="hasPermissionsResponse">
+    <wsdl:part name="parameters" element="acs:hasPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="setInheritPermissionRequest">
+    <wsdl:part name="parameters" element="acs:setInheritPermission" />
+  </wsdl:message>
+  <wsdl:message name="setInheritPermissionResponse">
+    <wsdl:part name="parameters" element="acs:setInheritPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOwnersRequest">
+    <wsdl:part name="parameters" element="acs:getOwners" />
+  </wsdl:message>
+  <wsdl:message name="getOwnersResponse">
+    <wsdl:part name="parameters" element="acs:getOwnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="setOwnersRequest">
+    <wsdl:part name="parameters" element="acs:setOwners" />
+  </wsdl:message>
+  <wsdl:message name="setOwnersResponse">
+    <wsdl:part name="parameters" element="acs:setOwnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccessControlFault">
+    <wsdl:part name="fault" element="acs:AccessControlFault" />
+  </wsdl:message>
+  <wsdl:portType name="AccessControlServiceSoapPort">
+    <wsdl:operation name="getACLs">
+      <wsdl:documentation>Get the list of the ACL's for a reference.</wsdl:documentation>
+      <wsdl:input name="getACLsRequest" message="acs:getACLsRequest" />
+      <wsdl:output name="getACLsResponse" message="acs:getACLsResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="addACEs">
+      <wsdl:documentation>Adds a number of ACE's to a collection of references.</wsdl:documentation>
+      <wsdl:input name="addACEsRequest" message="acs:addACEsRequest" />
+      <wsdl:output name="addACEsResponse" message="acs:addACEsResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="removeACEs">
+      <wsdl:documentation>Removes ACE's from a collection of references.</wsdl:documentation>
+      <wsdl:input name="removeACEsRequest" message="acs:removeACEsRequest" />
+      <wsdl:output name="removeACEsResponse" message="acs:removeACEsResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getPermissions">
+      <wsdl:documentation>Gets a list of the settable permissions for a set of references.</wsdl:documentation>
+      <wsdl:input name="getPermissionsRequest" message="acs:getPermissionsRequest" />
+      <wsdl:output name="getPermissionsResponse" message="acs:getPermissionsResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getClassPermissions">
+      <wsdl:documentation>Gets a list of the settable permissions for a list of classes.</wsdl:documentation>
+      <wsdl:input name="getClassPermissionsRequest" message="acs:getClassPermissionsRequest" />
+      <wsdl:output name="getClassPermissionsResponse" message="acs:getClassPermissionsResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="hasPermissions">
+      <wsdl:documentation>Determines whether the current authenticated user has the permissions on each of the specified references.</wsdl:documentation>
+      <wsdl:input name="hasPermissionsRequest" message="acs:hasPermissionsRequest" />
+      <wsdl:output name="hasPermissionsResponse" message="acs:hasPermissionsResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="setInheritPermission">
+      <wsdl:documentation>Set the inherit permission property of a set of references.</wsdl:documentation>
+      <wsdl:input name="setInheritPermissionRequest" message="acs:setInheritPermissionRequest" />
+      <wsdl:output name="setInheritPermissionResponse" message="acs:setInheritPermissionResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getOwners">
+      <wsdl:documentation>Get the current node owner.</wsdl:documentation>
+      <wsdl:input name="getOwnersRequest" message="acs:getOwnersRequest" />
+      <wsdl:output name="getOwnersResponse" message="acs:getOwnersResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+    <wsdl:operation name="setOwners">
+      <wsdl:documentation>Sets the current node owner.</wsdl:documentation>
+      <wsdl:input name="setOwnersRequest" message="acs:setOwnersRequest" />
+      <wsdl:output name="setOwnersResponse" message="acs:setOwnersResponse" />
+      <wsdl:fault name="AccessControlFault" message="acs:AccessControlFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccessControlServiceSoapBinding" type="acs:AccessControlServiceSoapPort">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getACLs">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/getACLs" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addACEs">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/addACEs" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeACEs">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/removeACEs" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPermissions">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/getPermissions" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getClassPermissions">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/getClassPermissions" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasPermissions">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/hasPermissions" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setInheritPermission">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/setInheritPermission" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOwners">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/getOwners" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setOwners">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/accesscontrol/1.0/setOwners" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessControlFault">
+        <wsdlsoap:fault use="literal" name="AccessControlFault" namespace="http://www.alfresco.org/ws/service/accesscontrol/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccessControlService">
+    <wsdl:documentation>Access control service.</wsdl:documentation>
+    <wsdl:port name="AccessControlService" binding="acs:AccessControlServiceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/alfresco/api/AccessControlService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

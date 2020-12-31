@@ -1,0 +1,5 @@
+<webscript>
+   <shortname>Fibonacci</shortname>
+   <description>Prints out the first 10 numbers of the Fibonacci sequence</description>
+   <url>/fib</url>
+</webscript>

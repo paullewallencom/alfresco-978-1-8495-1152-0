@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+
+<!-- ================================================ Form Bean Definitions -->
+
+    <form-beans>
+    	<form-bean name="loginFormBean" type="com.packtpub.a3ws.ch4.samples.vo.LoginFormBean"/>
+    	<form-bean name="userProfileFormBean" type="com.packtpub.a3ws.ch4.samples.vo.UserProfileFormBean"/>
+    	<form-bean name="confirmRemoveBookFormBean" type="com.packtpub.a3ws.ch4.samples.vo.ConfirmRemoveBookFormBean" />
+    	<form-bean name="reviewFormBean" type="com.packtpub.a3ws.ch4.samples.vo.ReviewFormBean" />
+    </form-beans>
+
+
+<!-- ========================================= Global Exception Definitions -->
+
+    <global-exceptions>
+        <!-- sample exception handler
+        <exception
+            key="expired.password"
+            type="app.ExpiredPasswordException"
+            path="/changePassword.jsp"/>
+        end sample -->
+    </global-exceptions>
+
+
+<!-- =========================================== Global Forward Definitions -->
+
+    <global-forwards>
+        <forward name="loginForm" path="/loginForm.do"/>
+        <forward name="home" path="/homepage.do"/>
+        <forward name="errorPage" path="/errorPage.do" />
+        <forward name="removeFromCart" path="/removeFromCart.do"/>
+    </global-forwards>
+
+
+<!-- =========================================== Action Mapping Definitions -->
+
+    <action-mappings>
+        
+        <action path="/errorPage" forward="/pages/errorPage.jsp"/>
+        
+         <action
+            path="/homepage"
+            type="com.packtpub.a3ws.ch4.samples.actions.HomepageAction"
+            validate="false"
+            scope="request">
+            
+            <forward name="homepage" path="/pages/homepage.jsp"/>
+            
+         </action>
+        
+        <action
+            path="/loginForm"
+            forward="/pages/login/loginForm.jsp"/>
+            
+        <action
+            path="/login"
+            type="com.packtpub.a3ws.ch4.samples.actions.LoginAction"
+            name="loginFormBean"
+            scope="request"
+            validate="false"
+            input="/pages/login.jsp">
+            
+            	<forward name="loginKo" path="/pages/login/loginKo.jsp" />
+            	<forward name="loggedIn" path="/pages/login/loggedIn.jsp" />
+       
+        </action>
+        
+        <action
+            path="/logout"
+            type="com.packtpub.a3ws.ch4.samples.actions.LogoutAction"
+            scope="request"
+            validate="false"/>
+        
+        <action 
+        	path="/userAccount"
+        	type="com.packtpub.a3ws.ch4.samples.actions.ViewUserAccountAction"
+        	name="userProfileFormBean"
+        	scope="request"
+        	validate="false">
+
+			<forward name="userProfile" path="/pages/profile/userProfile.jsp"/>
+        	
+        </action>
+        
+        <action 
+        	path="/saveAccount"
+        	type="com.packtpub.a3ws.ch4.samples.actions.SaveUserAccountAction"
+        	name="userProfileFormBean"
+        	scope="request"
+        	validate="false"
+        	input="/pages/profile/userProfile.jsp">
+        	
+        	<forward name="profileSavedOk" path="/pages/profile/profileSavedOk.jsp"/>
+        
+        </action>
+        
+        <action 
+        	path="/viewBookDetails"
+        	type="com.packtpub.a3ws.ch4.samples.actions.ViewBookDetailsAction"
+        	scope="request"
+        	validate="false">
+        
+        	<forward name="bookDetails" path="/pages/bookDetails.jsp"/>
+        
+        </action>
+        
+        <action 
+        	path="/addToCart"
+        	type="com.packtpub.a3ws.ch4.samples.actions.AddToCartAction"
+        	scope="request"
+        	validate="false">
+        	<forward name="bookAdded" path="/pages/bookAdded.jsp"/>
+        </action>
+        
+        <action 
+        	path="/userCart"
+        	type="com.packtpub.a3ws.ch4.samples.actions.ViewUserCartAction"
+        	scope="request"
+        	validate="false">
+        	<forward name="cartPage" path="/pages/userCart.jsp"/>
+        </action>
+        
+        <action 
+        	path="/removeFromCart"
+        	type="com.packtpub.a3ws.ch4.samples.actions.RemoveBookFromCartAction"
+        	scope="request"
+        	name="confirmRemoveBookFormBean"
+        	validate="false"
+        	input="/pages/passwordForm.jsp">
+        	<forward name="bookRemoved" path="/pages/bookRemoved.jsp"/>
+        </action>
+        
+        <action 
+        	path="/confirmRemoveFromCart"
+        	type="com.packtpub.a3ws.ch4.samples.actions.ConfirmRemoveBookFromCartAction"
+        	scope="request"
+        	name="confirmRemoveBookFormBean"
+        	validate="false">
+        	<forward name="passwordForm" path="/pages/passwordForm.jsp"/>
+        </action>
+        
+        <action 
+        	path="/formReview"
+        	type="com.packtpub.a3ws.ch4.samples.actions.FormReviewAction"
+        	scope="request"
+        	name="reviewFormBean"
+        	validate="false">
+        	<forward name="reviewForm" path="/pages/reviewForm.jsp"/>
+        </action>
+        
+        <action 
+        	path="/saveReview"
+        	type="com.packtpub.a3ws.ch4.samples.actions.SaveReviewAction"
+        	scope="request"
+        	name="reviewFormBean"
+        	validate="false"
+        	input="/pages/reviewForm.jsp">
+        	<forward name="reviewAdded" path="/pages/reviewSavedOk.jsp"/>
+        </action>
+        
+        <action 
+        	path="/admin/manageReviews" 
+        	type="com.packtpub.a3ws.ch4.samples.actions.ViewReviewsManagerAction"
+        	scope="request"
+        	validate="false">
+        	<forward name="manageReviewsPanel" path="/pages/admin/manageReviewsPanel.jsp"/>
+        </action>
+        
+        <action 
+        	path="/admin/acceptReview" 
+        	type="com.packtpub.a3ws.ch4.samples.actions.AcceptReviewAction"
+        	scope="request"
+        	validate="false">
+        	<forward name="managedOk" path="/pages/admin/managedOk.jsp"/>
+       	</action>
+       	
+       	<action 
+        	path="/admin/rejectReview" 
+        	type="com.packtpub.a3ws.ch4.samples.actions.RejectReviewAction"
+        	scope="request"
+        	validate="false">
+        	<forward name="managedOk" path="/pages/admin/managedOk.jsp"/>
+       	</action>
+   
+    </action-mappings>
+
+
+<!-- ======================================== Message Resources Definitions -->
+
+    <message-resources parameter="MessageResources" />
+
+  <!-- =================================================== Validator plugin -->
+
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property
+        property="pathnames"
+        value="/org/apache/struts/validator/validator-rules.xml,
+               /WEB-INF/validation.xml"/>
+  </plug-in>
+
+</struts-config>
+

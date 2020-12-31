@@ -1,0 +1,9 @@
+{
+  author: {
+      name: "John Doe",
+      email: "johndoe@example.com"
+  },
+  title: "A timeless masterpiece",
+  content: "The quick brown fox jumps over the lazy dog.",
+  rating: 5
+}

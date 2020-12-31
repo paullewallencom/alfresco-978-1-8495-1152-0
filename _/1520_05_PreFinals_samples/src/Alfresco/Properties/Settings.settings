@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Alfresco.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Alfresco_AuthenticationWebService_AuthenticationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/AuthenticationService</Value>
+    </Setting>
+    <Setting Name="Alfresco_ContentWebService_ContentService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/ContentService</Value>
+    </Setting>
+    <Setting Name="Alfresco_RepositoryWebService_RepositoryService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/RepositoryService</Value>
+    </Setting>
+    <Setting Name="Alfresco_DictionaryServiceWebService_DictionaryService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/DictionaryService</Value>
+    </Setting>
+    <Setting Name="Alfresco_AuthoringWebService_AuthoringService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/AuthoringService</Value>
+    </Setting>
+    <Setting Name="Alfresco_ClassificationWebService_ClassificationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/ClassificationService</Value>
+    </Setting>
+    <Setting Name="Alfresco_ActionWebService_ActionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/ActionService</Value>
+    </Setting>
+    <Setting Name="Alfresco_AccessControlWebService_AccessControlService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/AccessControlService</Value>
+    </Setting>
+    <Setting Name="Alfresco_AdministrationWebService_AdministrationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/alfresco/api/AdministrationService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

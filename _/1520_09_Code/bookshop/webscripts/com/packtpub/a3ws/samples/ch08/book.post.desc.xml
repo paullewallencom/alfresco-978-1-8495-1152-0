@@ -1,0 +1,8 @@
+<webscript>
+   <shortname>Create a book</shortname>
+   <description>Creates a new book from an Atom entry</description>
+   <url>/books/</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="atom">any</format>
+</webscript>

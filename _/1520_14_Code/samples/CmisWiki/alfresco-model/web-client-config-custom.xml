@@ -1,0 +1,21 @@
+<alfresco-config>
+
+   <config evaluator="string-compare" condition="Content Wizards">
+      <content-types>
+         <type name="wiki:page" />
+      </content-types>
+   </config>
+
+   <config evaluator="string-compare" condition="Action Wizards">
+      <specialise-types>
+         <type name="wiki:page" />
+      </specialise-types>
+   </config>
+
+   <config evaluator="node-type" condition="wiki:page">
+      <property-sheet>
+         <show-association name="wiki:linkedPages" />
+      </property-sheet>
+   </config>
+
+</alfresco-config>

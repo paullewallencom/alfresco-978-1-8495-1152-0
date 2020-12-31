@@ -1,0 +1,79 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{DB7B30DB-AC41-4E14-894B-5F64EB5F4CED}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Samples</RootNamespace>
+    <AssemblyName>Samples</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\dev\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3" />
+    <Reference Include="nunit.core">
+      <HintPath>..\..\libs\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\libs\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\..\libs\nunit.util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Association\AddChild.cs" />
+    <Compile Include="Association\RemoveChild.cs" />
+    <Compile Include="Builder.cs" />
+    <Compile Include="Crud\CopyNode.cs" />
+    <Compile Include="Crud\CreateNode.cs" />
+    <Compile Include="Crud\CreateNodeWithContent.cs" />
+    <Compile Include="Crud\CreateNodeWithContentService.cs" />
+    <Compile Include="Crud\DeleteNode.cs" />
+    <Compile Include="Crud\MoveNode.cs" />
+    <Compile Include="Crud\NodeVersioning.cs" />
+    <Compile Include="Crud\UpdateNode.cs" />
+    <Compile Include="Crud\UpdateNodeWithVersioning.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\SearchQuery.cs" />
+    <Compile Include="Vo\CreateSampleVO.cs" />
+    <Compile Include="Vo\CustomResultVO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alfresco\Alfresco.csproj">
+      <Project>{F7C103E8-5C55-45BB-AEBE-8FF39ED2B298}</Project>
+      <Name>Alfresco</Name>
+    </ProjectReference>
+    <Folder Include="Crud" />
+    <Folder Include="Association" />
+    <Folder Include="Search" />
+    <Folder Include="Vo" />
+  </ItemGroup>
+</Project>

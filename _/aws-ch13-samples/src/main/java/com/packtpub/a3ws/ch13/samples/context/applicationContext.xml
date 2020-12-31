@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<jaxws:client id="repositoryService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.RepositoryServicePort"
+		address="http://localhost:8080/alfresco/cmis/RepositoryService" />
+
+	<jaxws:client id="discoveryService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.DiscoveryServicePort" 
+		address="http://localhost:8080/alfresco/cmis/DiscoveryService" />
+
+	<jaxws:client id="multiFilingService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.MultiFilingServicePort"
+		address="http://localhost:8080/alfresco/cmis/MultiFilingService" />
+
+	<jaxws:client id="navigationService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.NavigationServicePort"
+		address="http://localhost:8080/alfresco/cmis/NavigationService" />
+
+	<jaxws:client id="objectService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.ObjectServicePort"
+		address="http://localhost:8080/alfresco/cmis/ObjectService" />
+
+	<jaxws:client id="policyService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.PolicyServicePort"
+		address="http://localhost:8080/alfresco/cmis/PolicyService" />
+
+	<jaxws:client id="relationshipService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.RelationshipServicePort"
+		address="http://localhost:8080/alfresco/cmis/RelationshipService" />
+	
+	<jaxws:client id="versioningService"
+		serviceClass="org.oasis_open.docs.ns.cmis.ws._200908.VersioningServicePort"
+		address="http://localhost:8080/alfresco/cmis/VersioningService" />
+		
+	<bean id="cmisClient" class="com.packtpub.a3ws.ch13.samples.cmis.ws.client.CmisClient">
+		<property name="repositoryService">
+			<ref bean="repositoryService"/>
+		</property>
+		<property name="discoveryService">
+			<ref bean="discoveryService"/>
+		</property>
+		<property name="multiFilingService">
+			<ref bean="multiFilingService"/>
+		</property>
+		<property name="navigationService">
+			<ref bean="navigationService"/>
+		</property>
+		<property name="objectService">
+			<ref bean="objectService"/>
+		</property>
+		<property name="policyService">
+			<ref bean="policyService"/>
+		</property>
+		<property name="relationshipService">
+			<ref bean="relationshipService"/>
+		</property>
+		<property name="versioningService">
+			<ref bean="versioningService"/>
+		</property>
+	</bean>
+
+</beans>

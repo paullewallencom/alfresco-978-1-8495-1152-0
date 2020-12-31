@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cms="http://www.alfresco.org/ws/model/content/1.0" xmlns:admin="http://www.alfresco.org/ws/service/administration/1.0" name="administration-service" targetNamespace="http://www.alfresco.org/ws/service/administration/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.alfresco.org/ws/model/content/1.0" location="types.xsd" />
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.alfresco.org/ws/service/administration/1.0">
+      <xsd:complexType name="UserDetails">
+        <xsd:sequence>
+          <xsd:element name="userName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="properties" type="cms:NamedValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UserDetails" type="admin:UserDetails" />
+      <xsd:complexType name="UserFilter">
+        <xsd:sequence>
+          <xsd:element name="userName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UserFilter" type="admin:UserFilter" />
+      <xsd:complexType name="UserQueryResults">
+        <xsd:sequence>
+          <xsd:element name="querySession" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="userDetails" type="admin:UserDetails" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UserQueryResults" type="admin:UserQueryResults" />
+      <xsd:complexType name="NewUserDetails">
+        <xsd:sequence>
+          <xsd:element name="userName" type="xsd:string" />
+          <xsd:element name="password" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="properties" type="cms:NamedValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="NewUserDetails" type="admin:NewUserDetails" />
+      <xsd:complexType name="AdministrationFault">
+        <xsd:sequence>
+          <xsd:element name="errorCode" type="xsd:int" />
+          <xsd:element name="message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AdministrationFault" type="admin:AdministrationFault" />
+      <xsd:element name="queryUsers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="filter" type="admin:UserFilter" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryUsersResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="admin:UserQueryResults" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="fetchMoreUsers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="querySession" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="fetchMoreUsersResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="admin:UserQueryResults" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="userName" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="admin:UserDetails" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createUsers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="newUsers" type="admin:NewUserDetails" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createUsersResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="result" type="admin:UserDetails" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateUsers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="users" type="admin:UserDetails" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateUsersResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="result" type="admin:UserDetails" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="userName" type="xsd:string" />
+            <xsd:element name="oldPassword" type="xsd:string" />
+            <xsd:element name="newPassword" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changePasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteUsers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="userNames" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteUsersResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="queryUsersRequest">
+    <wsdl:part name="parameters" element="admin:queryUsers" />
+  </wsdl:message>
+  <wsdl:message name="queryUsersResponse">
+    <wsdl:part name="parameters" element="admin:queryUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="fetchMoreUsersRequest">
+    <wsdl:part name="parameters" element="admin:fetchMoreUsers" />
+  </wsdl:message>
+  <wsdl:message name="fetchMoreUsersResponse">
+    <wsdl:part name="parameters" element="admin:fetchMoreUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserRequest">
+    <wsdl:part name="parameters" element="admin:getUser" />
+  </wsdl:message>
+  <wsdl:message name="getUserResponse">
+    <wsdl:part name="parameters" element="admin:getUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="createUsersRequest">
+    <wsdl:part name="parameters" element="admin:createUsers" />
+  </wsdl:message>
+  <wsdl:message name="createUsersResponse">
+    <wsdl:part name="parameters" element="admin:createUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateUsersRequest">
+    <wsdl:part name="parameters" element="admin:updateUsers" />
+  </wsdl:message>
+  <wsdl:message name="updateUsersResponse">
+    <wsdl:part name="parameters" element="admin:updateUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordRequest">
+    <wsdl:part name="parameters" element="admin:changePassword" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordResponse">
+    <wsdl:part name="parameters" element="admin:changePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsersRequest">
+    <wsdl:part name="parameters" element="admin:deleteUsers" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsersResponse">
+    <wsdl:part name="parameters" element="admin:deleteUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdministrationFault">
+    <wsdl:part name="fault" element="admin:AdministrationFault" />
+  </wsdl:message>
+  <wsdl:portType name="AdministrationServiceSoapPort">
+    <wsdl:operation name="queryUsers">
+      <wsdl:documentation>Gets the details of the requested users.</wsdl:documentation>
+      <wsdl:input name="queryUsersRequest" message="admin:queryUsersRequest" />
+      <wsdl:output name="queryUsersResponse" message="admin:queryUsersResponse" />
+      <wsdl:fault name="AdministrationFault" message="admin:AdministrationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchMoreUsers">
+      <wsdl:documentation>Fetch the next bathc of users from an existing user query.</wsdl:documentation>
+      <wsdl:input name="fetchMoreUsersRequest" message="admin:fetchMoreUsersRequest" />
+      <wsdl:output name="fetchMoreUsersResponse" message="admin:fetchMoreUsersResponse" />
+      <wsdl:fault name="AdministrationFault" message="admin:AdministrationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:documentation>Get the details of a specified user.</wsdl:documentation>
+      <wsdl:input name="getUserRequest" message="admin:getUserRequest" />
+      <wsdl:output name="getUserResponse" message="admin:getUserResponse" />
+      <wsdl:fault name="AdministrationFault" message="admin:AdministrationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="createUsers">
+      <wsdl:documentation>Create new users with the details provided.</wsdl:documentation>
+      <wsdl:input name="createUsersRequest" message="admin:createUsersRequest" />
+      <wsdl:output name="createUsersResponse" message="admin:createUsersResponse" />
+      <wsdl:fault name="AdministrationFault" message="admin:AdministrationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUsers">
+      <wsdl:documentation>Updates the details of the specified users.</wsdl:documentation>
+      <wsdl:input name="updateUsersRequest" message="admin:updateUsersRequest" />
+      <wsdl:output name="updateUsersResponse" message="admin:updateUsersResponse" />
+      <wsdl:fault name="AdministrationFault" message="admin:AdministrationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdl:documentation>Changes the password of the specified user.</wsdl:documentation>
+      <wsdl:input name="changePasswordRequest" message="admin:changePasswordRequest" />
+      <wsdl:output name="changePasswordResponse" message="admin:changePasswordResponse" />
+      <wsdl:fault name="AdministrationFault" message="admin:AdministrationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsers">
+      <wsdl:documentation>Delete the specified users.</wsdl:documentation>
+      <wsdl:input name="deleteUsersRequest" message="admin:deleteUsersRequest" />
+      <wsdl:output name="deleteUsersResponse" message="admin:deleteUsersResponse" />
+      <wsdl:fault name="AdministrationFault" message="admin:AdministrationFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdministrationServiceSoapBinding" type="admin:AdministrationServiceSoapPort">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="queryUsers">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/administration/1.0/queryUsers" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdministrationFault">
+        <wsdlsoap:fault use="literal" name="AdministrationFault" namespace="http://www.alfresco.org/ws/service/administration/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="fetchMoreUsers">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/administration/1.0/fetchMoreUsers" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdministrationFault">
+        <wsdlsoap:fault use="literal" name="AdministrationFault" namespace="http://www.alfresco.org/ws/service/administration/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/administration/1.0/getUser" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdministrationFault">
+        <wsdlsoap:fault use="literal" name="AdministrationFault" namespace="http://www.alfresco.org/ws/service/administration/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createUsers">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/administration/1.0/createUsers" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdministrationFault">
+        <wsdlsoap:fault use="literal" name="AdministrationFault" namespace="http://www.alfresco.org/ws/service/administration/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateUsers">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/administration/1.0/updateUsers" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdministrationFault">
+        <wsdlsoap:fault use="literal" name="AdministrationFault" namespace="http://www.alfresco.org/ws/service/administration/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/administration/1.0/changePassword" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdministrationFault">
+        <wsdlsoap:fault use="literal" name="AdministrationFault" namespace="http://www.alfresco.org/ws/service/administration/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsers">
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/administration/1.0/deleteUsers" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdministrationFault">
+        <wsdlsoap:fault use="literal" name="AdministrationFault" namespace="http://www.alfresco.org/ws/service/administration/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdministrationService">
+    <wsdl:documentation>Administration service.</wsdl:documentation>
+    <wsdl:port name="AdministrationService" binding="admin:AdministrationServiceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/alfresco/api/AdministrationService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

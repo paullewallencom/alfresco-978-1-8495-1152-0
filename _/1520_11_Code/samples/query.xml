@@ -1,0 +1,8 @@
+<cmis:query
+   xmlns:cmis="http://docs.oasis-open.org/ns/cmis/core/200908/">
+   <cmis:statement>
+      <![CDATA[SELECT * FROM cmis:document]]>
+   </cmis:statement>
+   <cmis:skipCount>0</cmis:skipCount>
+   <cmis:maxItems>10</cmis:maxItems>
+</cmis:query>

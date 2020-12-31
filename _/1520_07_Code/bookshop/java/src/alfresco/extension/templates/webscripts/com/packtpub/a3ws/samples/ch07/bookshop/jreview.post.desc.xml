@@ -1,0 +1,9 @@
+<webscript>
+   <shortname>Post Book Review (Java)</shortname>
+   <description>Post a Review to a Book (Java-backed Web Script)</description>
+   <url>/books/{isbn}/jreviews</url>
+   <url>/books/{isbn}/jreviews/</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="json">any</format>
+</webscript>

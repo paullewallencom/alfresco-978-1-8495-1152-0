@@ -1,0 +1,296 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7C103E8-5C55-45BB-AEBE-8FF39ED2B298}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alfresco</RootNamespace>
+    <AssemblyName>Alfresco</AssemblyName>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\dev\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdditionalDefinitions.cs" />
+    <Compile Include="AlfrescoException.cs" />
+    <Compile Include="AuthenticationUtils.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="ISO9075.cs" />
+    <Compile Include="MimetypeMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="Web References\AccessControlWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ActionWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AdministrationWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AuthenticationWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AuthoringWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClassificationWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ContentWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\DictionaryServiceWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\RepositoryWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/access-control-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\AccessControlWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/access-control-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_AccessControlWebService_AccessControlService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/action-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\ActionWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/action-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_ActionWebService_ActionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/administration-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\AdministrationWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/administration-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_AdministrationWebService_AdministrationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/authentication-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\AuthenticationWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/authentication-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_AuthenticationWebService_AuthenticationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/authoring-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\AuthoringWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/authoring-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_AuthoringWebService_AuthoringService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/classification-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\ClassificationWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/classification-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_ClassificationWebService_ClassificationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/content-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\ContentWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/content-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_ContentWebService_ContentService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/dictionary-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\DictionaryServiceWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/dictionary-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_DictionaryServiceWebService_DictionaryService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/alfresco/wsdl/repository-service.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\RepositoryWebService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/alfresco/wsdl/repository-service.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Alfresco_RepositoryWebService_RepositoryService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="Web References\AccessControlWebService\access-control-service.wsdl" />
+    <None Include="Web References\AccessControlWebService\ACL.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AccessControlWebService\GetClassPermissionsResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AccessControlWebService\GetPermissionsResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AccessControlWebService\HasPermissionsResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AccessControlWebService\OwnerResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AccessControlWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AccessControlWebService\types.xsd" />
+    <None Include="Web References\ActionWebService\action-service.wsdl" />
+    <None Include="Web References\ActionWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ActionWebService\types.xsd" />
+    <None Include="Web References\AdministrationWebService\administration-service.wsdl" />
+    <None Include="Web References\AdministrationWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AdministrationWebService\types.xsd" />
+    <None Include="Web References\AuthenticationWebService\authentication-service.wsdl" />
+    <None Include="Web References\AuthenticationWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AuthoringWebService\authoring-service.wsdl" />
+    <None Include="Web References\AuthoringWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AuthoringWebService\types.xsd" />
+    <None Include="Web References\ClassificationWebService\classification-service.wsdl" />
+    <None Include="Web References\ClassificationWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClassificationWebService\types.xsd" />
+    <None Include="Web References\ContentWebService\content-service.wsdl" />
+    <None Include="Web References\ContentWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ContentWebService\types.xsd" />
+    <None Include="Web References\DictionaryServiceWebService\dictionary-service.wsdl" />
+    <None Include="Web References\DictionaryServiceWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DictionaryServiceWebService\types.xsd" />
+    <None Include="Web References\RepositoryWebService\cml.xsd" />
+    <None Include="Web References\RepositoryWebService\headers.xsd" />
+    <None Include="Web References\RepositoryWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RepositoryWebService\repository-service.wsdl" />
+    <None Include="Web References\RepositoryWebService\types.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\mimetypes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

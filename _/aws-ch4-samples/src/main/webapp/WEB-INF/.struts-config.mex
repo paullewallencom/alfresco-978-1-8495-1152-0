@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/errorPage.do" location="1007,794" dimension="99,62" />
+  <StrutsActivity path="/homepage.do" location="937,175" dimension="352,88" />
+  <StrutsActivity path="/loginForm.do" location="796,794" dimension="101,62" />
+  <StrutsActivity path="/login.do" location="190,768" dimension="325,88" />
+  <StrutsActivity path="/logout.do" location="811,1050" dimension="333,88" />
+  <StrutsActivity path="/userAccount.do" location="503,0" dimension="389,88" />
+  <StrutsActivity path="/saveAccount.do" location="503,337" dimension="389,88" />
+  <StrutsActivity path="/viewBookDetails.do" location="1175,619" dimension="381,88" />
+  <StrutsActivity path="/addToCart.do" location="412,1050" dimension="354,88" />
+  <StrutsActivity path="/userCart.do" location="0,1050" dimension="367,88" />
+  <StrutsActivity path="/removeFromCart.do" location="22,337" dimension="414,88" />
+  <StrutsActivity path="/confirmRemoveFromCart.do" location="0,0" dimension="458,88" />
+  <StrutsActivity path="/formReview.do" location="1550,850" dimension="359,88" />
+  <StrutsActivity path="/saveReview.do" location="1250,1150" dimension="358,88" />
+  <StrutsActivity path="/admin/manageReviews.do" location="950,1350" dimension="378,88" />
+  <StrutsActivity path="loginForm;6" location="788,619" dimension="118,75" />
+  <StrutsActivity path="home;6" location="1053,0" dimension="119,75" />
+  <StrutsActivity path="errorPage;6" location="998,619" dimension="116,75" />
+  <StrutsActivity path="removeFromCart;6" location="1250,350" dimension="154,75" />
+  <StrutsActivity path="/pages/errorPage.jsp" location="983,956" dimension="147,49" />
+  <StrutsActivity path="/pages/homepage.jsp" location="1038,363" dimension="150,49" />
+  <StrutsActivity path="/pages/login/loginForm.jsp" location="756,956" dimension="182,49" />
+  <StrutsActivity path="/pages/login/loginKo.jsp" location="0,956" dimension="168,49" />
+  <StrutsActivity path="/pages/login/loggedIn.jsp" location="537,956" dimension="174,49" />
+  <StrutsActivity path="/pages/login.jsp" location="292,619" dimension="121,49" />
+  <StrutsActivity path="/pages/profile/userProfile.jsp" location="601,188" dimension="193,49" />
+  <StrutsActivity path="/pages/profile/profileSavedOk.jsp" location="589,525" dimension="216,49" />
+  <StrutsActivity path="/pages/bookDetails.jsp" location="1287,807" dimension="157,49" />
+  <StrutsActivity path="/pages/bookAdded.jsp" location="511,1238" dimension="156,49" />
+  <StrutsActivity path="/pages/userCart.jsp" location="113,1238" dimension="141,49" />
+  <StrutsActivity path="/pages/bookRemoved.jsp" location="144,525" dimension="170,49" />
+  <StrutsActivity path="/pages/passwordForm.jsp" location="142,188" dimension="174,49" />
+  <StrutsActivity path="/pages/reviewForm.jsp" location="1550,1050" dimension="156,49" />
+  <StrutsActivity path="/pages/reviewSavedOk.jsp" location="650,1350" dimension="174,49" />
+  <StrutsActivity path="/pages/cma/manageReviewsPanel.jsp" location="1550,1450" dimension="234,49" />
+  <StrutsActivity path="/pages/cma/managedOk.jsp" location="650,1550" dimension="186,49" />
+  <StrutsActivity path="/pages/login/loginOk.jsp" location="268,956" dimension="169,49" />
+  <StrutsActivity path="/pages/login/logout.jsp" location="896,1238" dimension="162,49" />
+  <StrutsActivity path="/pages/bookDetails" location="197,1332" dimension="138,49" />
+  <StrutsActivity path="/pages/userProfile.jsp" location="0,1332" dimension="152,49" />
+  <StrutsActivity path="/pages/account/userProfile.jsp" location="1189,1050" dimension="201,49" />
+  <StrutsActivity path="/pages/cart.jsp" location="380,1332" dimension="115,49" />
+  <StrutsActivity path="/pages/writeReviewForm.jsp" location="1250,950" dimension="184,49" />
+  <StrutsActivity path="/pages/manageReviewsPanel.jsp" location="1550,1350" dimension="206,49" />
+  <StrutsActivity path="/pages/managedOk.jsp" location="650,1450" dimension="158,49" />
+  <StrutsActivity path="/admin/acceptReview.do" location="50,1450" dimension="368,88" />
+  <StrutsActivity path="/admin/rejectReview.do" location="950,1550" dimension="363,88" />
+  <StrutsActivity path="/pages/admin/managedOk.jsp" location="1550,1550" dimension="197,49" />
+  <StrutsActivity path="/pages/admin/manageReviewsPanel.jsp" />
+  <StrutsTransition id="/login.do,loginKo,/pages/login/loginKo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="190,812" />
+      <AbsolutePoint location="84,812" />
+      <AbsolutePoint location="84,956" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,homepage,/pages/homepage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1113,263" />
+      <AbsolutePoint location="1113,363" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="home;6,null,/homepage.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1113,75" />
+      <AbsolutePoint location="1113,175" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="loginForm;6,null,/loginForm.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="846,694" />
+      <AbsolutePoint location="846,794" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addToCart.do,bookAdded,/pages/bookAdded.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="589,1138" />
+      <AbsolutePoint location="589,1238" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmRemoveFromCart.do,passwordForm,/pages/passwordForm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="229,88" />
+      <AbsolutePoint location="229,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/manageReviews.do,manageReviewsPanel,/pages/admin/manageReviewsPanel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1139,1394" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/manageReviews.do,manageReviewsPanel,/pages/cma/manageReviewsPanel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1139,1438" />
+      <AbsolutePoint location="1139,1474" />
+      <AbsolutePoint location="1550,1474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/formReview.do,reviewForm,/pages/reviewForm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1628,938" />
+      <AbsolutePoint location="1628,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/passwordForm.jsp,null,/removeFromCart.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="229,237" />
+      <AbsolutePoint location="229,337" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/errorPage.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1056,694" />
+      <AbsolutePoint location="1056,794" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/profile/userProfile.jsp,null,/saveAccount.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="697,237" />
+      <AbsolutePoint location="697,337" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/saveReview.do,reviewAdded,/pages/reviewSavedOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1194" />
+      <AbsolutePoint location="737,1194" />
+      <AbsolutePoint location="737,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAccount.do,userProfile,/pages/profile/userProfile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="697,88" />
+      <AbsolutePoint location="697,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/manageReview.do,managedOk,/pages/cma/managedOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="236,1538" />
+      <AbsolutePoint location="236,1574" />
+      <AbsolutePoint location="650,1574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/acceptReview.do,managedOk,/pages/cma/managedOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="234,1538" />
+      <AbsolutePoint location="234,1574" />
+      <AbsolutePoint location="650,1574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="removeFromCart;6,null,/removeFromCart.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1327,425" />
+      <AbsolutePoint location="1327,470" />
+      <AbsolutePoint location="84,470" />
+      <AbsolutePoint location="84,425" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginForm.do,null,/pages/login/loginForm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="847,856" />
+      <AbsolutePoint location="847,956" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userCart.do,cartPage,/pages/userCart.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="183,1138" />
+      <AbsolutePoint location="183,1238" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/reviewForm.jsp,null,/saveReview.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1593,1099" />
+      <AbsolutePoint location="1593,1150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/login.jsp,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="352,668" />
+      <AbsolutePoint location="352,768" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/saveAccount.do,profileSavedOk,/pages/profile/profileSavedOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="697,425" />
+      <AbsolutePoint location="697,525" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,loggedIn,/pages/login/loggedIn.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="515,812" />
+      <AbsolutePoint location="624,812" />
+      <AbsolutePoint location="624,956" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/removeFromCart.do,bookRemoved,/pages/bookRemoved.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="229,425" />
+      <AbsolutePoint location="229,525" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/viewBookDetails.do,bookDetails,/pages/bookDetails.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1365,707" />
+      <AbsolutePoint location="1365,807" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/acceptReview.do,managedOk,/pages/admin/managedOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="418,1514" />
+      <AbsolutePoint location="1648,1514" />
+      <AbsolutePoint location="1648,1550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/admin/rejectReview.do,managedOk,/pages/admin/managedOk.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1313,1574" />
+      <AbsolutePoint location="1550,1574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/errorPage.do,null,/pages/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1056,856" />
+      <AbsolutePoint location="1056,956" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

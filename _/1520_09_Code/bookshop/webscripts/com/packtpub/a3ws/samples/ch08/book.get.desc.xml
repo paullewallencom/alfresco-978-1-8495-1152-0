@@ -1,0 +1,8 @@
+<webscript>
+   <shortname>Read a book</shortname>
+   <description>Returns information about a book</description>
+   <url>/books/{isbn}</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="atom">any</format>
+</webscript>

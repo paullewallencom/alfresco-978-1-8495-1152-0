@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cms="http://www.alfresco.org/ws/model/content/1.0" xmlns:cls="http://www.alfresco.org/ws/service/classification/1.0" name="classification-service" targetNamespace="http://www.alfresco.org/ws/service/classification/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.alfresco.org/ws/model/content/1.0" location="types.xsd" />
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.alfresco.org/ws/service/classification/1.0">
+      <xsd:element name="getClassifications">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="store" type="cms:Store" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getClassificationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="getClassificationsReturn" type="cms:Classification" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getChildCategories">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parentCategory" type="cms:Reference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getChildCategoriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="getChildCategoriesReturn" type="cms:Category" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCategories">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCategoriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="getCategoriesReturn" type="cls:CategoriesResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setCategories">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="categories" type="cls:AppliedCategory" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setCategoriesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="setCategoriesReturn" type="cls:CategoriesResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="describeClassification">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="classification" type="cms:Name" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="describeClassificationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="describeClassificationReturn" type="cms:ClassDefinition" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CategoriesResult">
+        <xsd:sequence>
+          <xsd:element name="node" type="cms:Reference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="categories" type="cls:AppliedCategory" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CategoriesResult" type="cls:CategoriesResult" />
+      <xsd:complexType name="AppliedCategory">
+        <xsd:sequence>
+          <xsd:element name="classification" type="cms:Name" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="categories" type="cms:Reference" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AppliedCategory" type="cls:AppliedCategory" />
+      <xsd:complexType name="ClassificationFault">
+        <xsd:sequence>
+          <xsd:element name="errorCode" type="xsd:int" />
+          <xsd:element name="message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ClassificationFault" type="cls:ClassificationFault" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getClassificationsRequest">
+    <wsdl:part name="parameters" element="cls:getClassifications" />
+  </wsdl:message>
+  <wsdl:message name="getClassificationsResponse">
+    <wsdl:part name="parameters" element="cls:getClassificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getChildCategoriesRequest">
+    <wsdl:part name="parameters" element="cls:getChildCategories" />
+  </wsdl:message>
+  <wsdl:message name="getChildCategoriesResponse">
+    <wsdl:part name="parameters" element="cls:getChildCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCategoriesRequest">
+    <wsdl:part name="parameters" element="cls:getCategories" />
+  </wsdl:message>
+  <wsdl:message name="getCategoriesResponse">
+    <wsdl:part name="parameters" element="cls:getCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCategoriesRequest">
+    <wsdl:part name="parameters" element="cls:setCategories" />
+  </wsdl:message>
+  <wsdl:message name="setCategoriesResponse">
+    <wsdl:part name="parameters" element="cls:setCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="describeClassificationRequest">
+    <wsdl:part name="parameters" element="cls:describeClassification" />
+  </wsdl:message>
+  <wsdl:message name="describeClassificationResponse">
+    <wsdl:part name="parameters" element="cls:describeClassificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClassificationFault">
+    <wsdl:part name="fault" element="cls:ClassificationFault" />
+  </wsdl:message>
+  <wsdl:portType name="ClassificationServiceSoapPort">
+    <wsdl:operation name="getClassifications">
+      <wsdl:documentation>Gets available classifications.</wsdl:documentation>
+      <wsdl:input name="getClassificationsRequest" message="cls:getClassificationsRequest" />
+      <wsdl:output name="getClassificationsResponse" message="cls:getClassificationsResponse" />
+      <wsdl:fault name="ClassificationFault" message="cls:ClassificationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getChildCategories">
+      <wsdl:documentation>Gets child categories for the specified parent category.</wsdl:documentation>
+      <wsdl:input name="getChildCategoriesRequest" message="cls:getChildCategoriesRequest" />
+      <wsdl:output name="getChildCategoriesResponse" message="cls:getChildCategoriesResponse" />
+      <wsdl:fault name="ClassificationFault" message="cls:ClassificationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategories">
+      <wsdl:documentation>Gets the categories applied to the specified content resource.</wsdl:documentation>
+      <wsdl:input name="getCategoriesRequest" message="cls:getCategoriesRequest" />
+      <wsdl:output name="getCategoriesResponse" message="cls:getCategoriesResponse" />
+      <wsdl:fault name="ClassificationFault" message="cls:ClassificationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="setCategories">
+      <wsdl:documentation>Modifies the categories applied to the specified content resource.</wsdl:documentation>
+      <wsdl:input name="setCategoriesRequest" message="cls:setCategoriesRequest" />
+      <wsdl:output name="setCategoriesResponse" message="cls:setCategoriesResponse" />
+      <wsdl:fault name="ClassificationFault" message="cls:ClassificationFault" />
+    </wsdl:operation>
+    <wsdl:operation name="describeClassification">
+      <wsdl:documentation>Describe a classification in terms of how it is represented in the meta model i.e. is it an aspect, which property holds the applied category.</wsdl:documentation>
+      <wsdl:input name="describeClassificationRequest" message="cls:describeClassificationRequest" />
+      <wsdl:output name="describeClassificationResponse" message="cls:describeClassificationResponse" />
+      <wsdl:fault name="ClassificationFault" message="cls:ClassificationFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClassificationServiceSoapBinding" type="cls:ClassificationServiceSoapPort">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getClassifications">
+      <wsdl:documentation>Gets available classifications.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/classification/1.0/getClassifications" />
+      <wsdl:input name="getClassificationsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getClassificationsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationFault">
+        <wsdlsoap:fault use="literal" name="ClassificationFault" namespace="http://www.alfresco.org/ws/service/classification/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getChildCategories">
+      <wsdl:documentation>Gets child categories for the specified parent category.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/classification/1.0/getChildCategories" />
+      <wsdl:input name="getChildCategoriesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getChildCategoriesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationFault">
+        <wsdlsoap:fault use="literal" name="ClassificationFault" namespace="http://www.alfresco.org/ws/service/classification/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCategories">
+      <wsdl:documentation>Gets the categories applied to the specified content resource.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/classification/1.0/getCategories" />
+      <wsdl:input name="getCategoriesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCategoriesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationFault">
+        <wsdlsoap:fault use="literal" name="ClassificationFault" namespace="http://www.alfresco.org/ws/service/classification/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setCategories">
+      <wsdl:documentation>Modifies the categories applied to the specified content resource.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/classification/1.0/setCategories" />
+      <wsdl:input name="setCategoriesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setCategoriesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationFault">
+        <wsdlsoap:fault use="literal" name="ClassificationFault" namespace="http://www.alfresco.org/ws/service/classification/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="describeClassification">
+      <wsdl:documentation>Describe a classification in terms of how it is represented in the meta model i.e. is it an aspect, which property holds the applied category.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/classification/1.0/describeClassification" />
+      <wsdl:input name="describeClassificationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="describeClassificationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationFault">
+        <wsdlsoap:fault use="literal" name="ClassificationFault" namespace="http://www.alfresco.org/ws/service/classification/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClassificationService">
+    <wsdl:documentation>Provides support for classifying content resources.</wsdl:documentation>
+    <wsdl:port name="ClassificationService" binding="cls:ClassificationServiceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/alfresco/api/ClassificationService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

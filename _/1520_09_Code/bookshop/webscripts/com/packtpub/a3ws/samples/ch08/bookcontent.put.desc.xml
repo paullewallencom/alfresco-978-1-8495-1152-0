@@ -1,0 +1,8 @@
+<webscript>
+   <shortname>PUT a book's contents</shortname>
+   <description>Accepts the contents of a book as a PDF file</description>
+   <url>/books/{isbn}/content</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="atom">any</format>
+</webscript>

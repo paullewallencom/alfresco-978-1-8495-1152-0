@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<entry
+    xmlns="http://www.w3.org/2005/Atom"
+    xmlns:app="http://www.w3.org/2007/app"
+    xmlns:bs="http://www.packtpub.com/a3ws/samples/bookshop">
+   <id>1ecdf8fd-3939-492a-9670-eeb381568a1a</id>
+   <link rel="self"
+      href="http://localhost:8080/alfresco/service/books/978-0684833392"/>
+     <link rel="alternate" type="application/pdf" href="http://localhost:8080/alfresco/d/d/workspace/SpacesStore/1ecdf8fd-3939-492a-9670-eeb381568a1a/catch22.pdf"/>
+   <link rel="edit-media"
+      href="http://localhost:8080/alfresco/service/books/978-0684833392/content"/>
+   <updated>2010-01-14T14:20:24+0100</updated>
+  <title>Catch-22</title>
+	   <author><name>Joseph Heller</name></author>
+	   <category term="fiction" scheme="http://www.packtpub.com/a3ws/bookshop/categories" />
+	<bs:isbn>978-0684833392</bs:isbn>
+	<bs:publisher>Simon &amp; Schuster</bs:publisher>
+	<bs:price>15.99</bs:price>
+</entry>

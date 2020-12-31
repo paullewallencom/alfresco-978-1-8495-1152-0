@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Bookshop Model -->
+
+<model name="bs:bookshopModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+   <description>Bookshop Model for the A3WS Samples</description>
+   <author>Ugo Cei, Piergiorgio Lucidi</author>
+   <version>1.0</version>
+
+   <imports>
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+      <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+   </imports>
+
+   <namespaces>
+      <namespace uri="http://www.packtpub.com/a3ws/samples/bookshop" prefix="bs"/>
+   </namespaces>
+
+   <types>
+   
+      <type name="bs:book">
+         <title>Book</title>
+         <parent>cm:content</parent>
+         <properties>
+            <property name="bs:isbn">
+               <title>ISBN</title>
+               <type>d:text</type>
+               <mandatory>true</mandatory>
+               <index enabled="true">
+                  <atomic>true</atomic>
+                  <stored>false</stored>
+                  <tokenised>false</tokenised>
+               </index>
+            </property>
+            <property name="bs:publisher">
+               <title>Publisher</title>
+               <type>d:text</type>
+               <mandatory>true</mandatory>
+            </property>
+            <property name="bs:author">
+               <title>Author</title>
+               <type>d:text</type>
+               <mandatory>true</mandatory>
+               <multiple>true</multiple>
+            </property>
+            <property name="bs:price">
+               <title>Price</title>
+               <type>d:float</type>
+               <mandatory>false</mandatory>
+            </property>
+         </properties>
+         <associations>
+            <child-association name="bs:reviews">
+               <source>
+                  <mandatory>false</mandatory>
+                  <many>true</many>
+               </source>
+               <target>
+                  <class>bs:review</class>
+                  <mandatory>false</mandatory>
+                  <many>true</many>
+               </target>
+            </child-association>
+         </associations>
+      </type>
+
+      <type name="bs:review">
+         <title>Review</title>
+         <parent>cm:content</parent>
+         <properties>
+            <property name="bs:reviewer_name">
+               <title>Reviewer's name</title>
+               <type>d:text</type>
+               <mandatory>true</mandatory>
+            </property>
+            <property name="bs:reviewer_email">
+               <title>Reviewer's email</title>
+               <type>d:text</type>
+               <mandatory>true</mandatory>
+            </property>
+            <property name="bs:review_rating">
+               <title>Rating</title>
+               <type>d:int</type>
+               <mandatory>true</mandatory>
+            </property>
+            <property name="bs:approved">
+               <title>Approved</title>
+               <type>d:boolean</type>
+               <mandatory enforced="true">true</mandatory>
+               <default>false</default>
+            </property>
+         </properties>
+      </type>
+      
+   </types>
+   
+</model>

@@ -1,0 +1,11 @@
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:bs="http://www.packtpub.com/a3ws/samples/bookshop">
+   <id>urn:isbn:978-0201616224</id>
+   <updated>2010-01-14T14:20:24+0100</updated>
+   <title>The Pragmatic Programmer</title>
+	<author><name>David Thomas</name></author>
+	<author><name>Andrew Hunt</name></author>
+   <category term="computers" scheme="http://www.packtpub.com/a3ws/bookshop/categories" />
+   <bs:isbn>978-0201616224</bs:isbn>
+   <bs:publisher>Addison-Wesley Professional</bs:publisher>
+</entry>

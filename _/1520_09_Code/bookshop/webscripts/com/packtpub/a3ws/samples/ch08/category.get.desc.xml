@@ -1,0 +1,8 @@
+<webscript>
+   <shortname>Category Listing</shortname>
+   <description>Lists all the books belonging to a category</description>
+   <url>/books/category/{category}</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="atom">any</format>
+</webscript>

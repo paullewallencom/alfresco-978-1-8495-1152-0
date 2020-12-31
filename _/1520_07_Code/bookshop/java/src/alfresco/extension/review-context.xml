@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+
+	<bean id="webscript.com.packtpub.a3ws.samples.ch07.bookshop.jreview.post"
+	  class="com.packtpub.a3ws.samples.ch07.bookshop.PostReviewJavaWebScript"
+	  parent="webscript" >
+	  <property name="searchService" ref="SearchService"/>
+	  <property name="nodeService" ref="NodeService"/>
+	  <property name="contentService" ref="ContentService"/>
+	</bean>
+  
+</beans>

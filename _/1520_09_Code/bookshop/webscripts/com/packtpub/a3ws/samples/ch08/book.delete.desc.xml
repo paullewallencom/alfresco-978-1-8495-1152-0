@@ -1,0 +1,8 @@
+<webscript>
+   <shortname>Delete an existing book</shortname>
+   <description>Deleted an existing book given its ISBN</description>
+   <url>/books/{isbn}</url>
+   <authentication>user</authentication>
+   <transaction>required</transaction>
+   <format default="atom">any</format>
+</webscript>

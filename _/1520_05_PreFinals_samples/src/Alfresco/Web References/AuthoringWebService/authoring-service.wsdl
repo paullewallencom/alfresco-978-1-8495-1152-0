@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cms="http://www.alfresco.org/ws/model/content/1.0" xmlns:author="http://www.alfresco.org/ws/service/authoring/1.0" name="authoring-service" targetNamespace="http://www.alfresco.org/ws/service/authoring/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.alfresco.org/ws/cml/1.0" location="types.xsd" />
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.alfresco.org/ws/service/authoring/1.0">
+      <xsd:element name="checkout">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+            <xsd:element name="destination" type="cms:ParentReference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkoutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="checkoutReturn" type="author:CheckoutResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkin">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="comments" type="cms:NamedValue" />
+            <xsd:element name="keepCheckedOut" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkinResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="checkinReturn" type="author:CheckinResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkinExternal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Reference" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="comments" type="cms:NamedValue" />
+            <xsd:element name="keepCheckedOut" type="xsd:boolean" />
+            <xsd:element name="format" type="cms:ContentFormat" />
+            <xsd:element name="content" type="xsd:base64Binary" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkinExternalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="checkinExternalReturn" type="cms:Reference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelCheckout">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelCheckoutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cancelCheckoutReturn" type="author:CancelCheckoutResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="lock">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+            <xsd:element name="lockChildren" type="xsd:boolean" />
+            <xsd:element name="lockType" type="author:LockTypeEnum" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="lockResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="lockReturn" type="cms:Reference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="unlock">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+            <xsd:element name="unlockChildren" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="unlockResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="unlockReturn" type="cms:Reference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getLockStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getLockStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="getLockStatusReturn" type="author:LockStatus" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createVersion">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="items" type="cms:Predicate" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="comments" type="cms:NamedValue" />
+            <xsd:element name="versionChildren" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createVersionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createVersionReturn" type="author:VersionResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getVersionHistory">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="node" type="cms:Reference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getVersionHistoryResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getVersionHistoryReturn" type="cms:VersionHistory" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="revertVersion">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="node" type="cms:Reference" />
+            <xsd:element name="versionLabel" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="revertVersionResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteAllVersions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="node" type="cms:Reference" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteAllVersionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="deleteAllVersionsReturn" type="cms:VersionHistory" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CheckoutResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="originals" type="cms:Reference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="workingCopies" type="cms:Reference" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CheckoutResult" type="author:CheckoutResult" />
+      <xsd:complexType name="CheckinResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="workingCopies" type="cms:Reference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="checkedIn" type="cms:Reference" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CheckinResult" type="author:CheckinResult" />
+      <xsd:complexType name="CancelCheckoutResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="workingCopies" type="cms:Reference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="originals" type="cms:Reference" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CancelCheckoutResult" type="author:CancelCheckoutResult" />
+      <xsd:complexType name="LockStatus">
+        <xsd:sequence>
+          <xsd:element name="node" type="cms:Reference" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="lockType" nillable="true" type="author:LockTypeEnum" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="lockOwner" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="LockStatus" type="author:LockStatus" />
+      <xsd:complexType name="VersionResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nodes" type="cms:Reference" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="versions" type="cms:Version" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="VersionResult" type="author:VersionResult" />
+      <xsd:simpleType name="LockTypeEnum">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="read" />
+          <xsd:enumeration value="write" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="AuthoringFault">
+        <xsd:sequence>
+          <xsd:element name="errorCode" type="xsd:int" />
+          <xsd:element name="message" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AuthoringFault" type="author:AuthoringFault" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="checkoutRequest">
+    <wsdl:part name="parameters" element="author:checkout" />
+  </wsdl:message>
+  <wsdl:message name="checkoutResponse">
+    <wsdl:part name="parameters" element="author:checkoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkinRequest">
+    <wsdl:part name="parameters" element="author:checkin" />
+  </wsdl:message>
+  <wsdl:message name="checkinResponse">
+    <wsdl:part name="parameters" element="author:checkinResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkinExternalRequest">
+    <wsdl:part name="parameters" element="author:checkinExternal" />
+  </wsdl:message>
+  <wsdl:message name="checkinExternalResponse">
+    <wsdl:part name="parameters" element="author:checkinExternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelCheckoutRequest">
+    <wsdl:part name="parameters" element="author:cancelCheckout" />
+  </wsdl:message>
+  <wsdl:message name="cancelCheckoutResponse">
+    <wsdl:part name="parameters" element="author:cancelCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="lockRequest">
+    <wsdl:part name="parameters" element="author:lock" />
+  </wsdl:message>
+  <wsdl:message name="lockResponse">
+    <wsdl:part name="parameters" element="author:lockResponse" />
+  </wsdl:message>
+  <wsdl:message name="unlockRequest">
+    <wsdl:part name="parameters" element="author:unlock" />
+  </wsdl:message>
+  <wsdl:message name="unlockResponse">
+    <wsdl:part name="parameters" element="author:unlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLockStatusRequest">
+    <wsdl:part name="parameters" element="author:getLockStatus" />
+  </wsdl:message>
+  <wsdl:message name="getLockStatusResponse">
+    <wsdl:part name="parameters" element="author:getLockStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="createVersionRequest">
+    <wsdl:part name="parameters" element="author:createVersion" />
+  </wsdl:message>
+  <wsdl:message name="createVersionResponse">
+    <wsdl:part name="parameters" element="author:createVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersionHistoryRequest">
+    <wsdl:part name="parameters" element="author:getVersionHistory" />
+  </wsdl:message>
+  <wsdl:message name="getVersionHistoryResponse">
+    <wsdl:part name="parameters" element="author:getVersionHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="revertVersionRequest">
+    <wsdl:part name="parameters" element="author:revertVersion" />
+  </wsdl:message>
+  <wsdl:message name="revertVersionResponse">
+    <wsdl:part name="parameters" element="author:revertVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllVersionsRequest">
+    <wsdl:part name="parameters" element="author:deleteAllVersions" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllVersionsResponse">
+    <wsdl:part name="parameters" element="author:deleteAllVersionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthoringFault">
+    <wsdl:part name="fault" element="author:AuthoringFault" />
+  </wsdl:message>
+  <wsdl:portType name="AuthoringServiceSoapPort">
+    <wsdl:operation name="checkout">
+      <wsdl:documentation>Checkout a content resource for editing.</wsdl:documentation>
+      <wsdl:input name="checkoutRequest" message="author:checkoutRequest" />
+      <wsdl:output name="checkoutResponse" message="author:checkoutResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="checkin">
+      <wsdl:documentation>Checkin a content resource.</wsdl:documentation>
+      <wsdl:input name="checkinRequest" message="author:checkinRequest" />
+      <wsdl:output name="checkinResponse" message="author:checkinResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="checkinExternal">
+      <wsdl:documentation>Checkin an external content resource thus replacing the existing working content.</wsdl:documentation>
+      <wsdl:input name="checkinExternalRequest" message="author:checkinExternalRequest" />
+      <wsdl:output name="checkinExternalResponse" message="author:checkinExternalResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelCheckout">
+      <wsdl:documentation>Cancels the checkout.</wsdl:documentation>
+      <wsdl:input name="cancelCheckoutRequest" message="author:cancelCheckoutRequest" />
+      <wsdl:output name="cancelCheckoutResponse" message="author:cancelCheckoutResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="lock">
+      <wsdl:documentation>Locks a content resource.</wsdl:documentation>
+      <wsdl:input name="lockRequest" message="author:lockRequest" />
+      <wsdl:output name="lockResponse" message="author:lockResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="unlock">
+      <wsdl:documentation>Unlocks a content resource.</wsdl:documentation>
+      <wsdl:input name="unlockRequest" message="author:unlockRequest" />
+      <wsdl:output name="unlockResponse" message="author:unlockResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getLockStatus">
+      <wsdl:documentation>Gets the lock status of the specified nodes.</wsdl:documentation>
+      <wsdl:input name="getLockStatusRequest" message="author:getLockStatusRequest" />
+      <wsdl:output name="getLockStatusResponse" message="author:getLockStatusResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="createVersion">
+      <wsdl:documentation>Create a snapshot of the specified node(s) in the version store.</wsdl:documentation>
+      <wsdl:input name="createVersionRequest" message="author:createVersionRequest" />
+      <wsdl:output name="createVersionResponse" message="author:createVersionResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersionHistory">
+      <wsdl:documentation>Gets the version history for the specfied node.</wsdl:documentation>
+      <wsdl:input name="getVersionHistoryRequest" message="author:getVersionHistoryRequest" />
+      <wsdl:output name="getVersionHistoryResponse" message="author:getVersionHistoryResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="revertVersion">
+      <wsdl:documentation>Revert a node to the snapshot of the specified version.</wsdl:documentation>
+      <wsdl:input name="revertVersionRequest" message="author:revertVersionRequest" />
+      <wsdl:output name="revertVersionResponse" message="author:revertVersionResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllVersions">
+      <wsdl:documentation>Delete all snapshot versions of the specified node.</wsdl:documentation>
+      <wsdl:input name="deleteAllVersionsRequest" message="author:deleteAllVersionsRequest" />
+      <wsdl:output name="deleteAllVersionsResponse" message="author:deleteAllVersionsResponse" />
+      <wsdl:fault name="AuthoringFault" message="author:AuthoringFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthoringServiceSoapBinding" type="author:AuthoringServiceSoapPort">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkout">
+      <wsdl:documentation>Checkout a content resource for editing.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/checkout" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkin">
+      <wsdl:documentation>Checkin a content resource.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/checkin" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkinExternal">
+      <wsdl:documentation>Checkin an external content resource thus replacing the existing working content.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/checkinExternal" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelCheckout">
+      <wsdl:documentation>Cancels the checkout.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/cancelCheckout" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="lock">
+      <wsdl:documentation>Locks a content resource.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/lock" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="unlock">
+      <wsdl:documentation>Unlocks a content resource.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/unlock" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLockStatus">
+      <wsdl:documentation>Gets the lock status of the specified nodes.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/getLockStatus" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createVersion">
+      <wsdl:documentation>Create a snapshot of the specified node(s) in the version store.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/createVersion" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersionHistory">
+      <wsdl:documentation>Gets the version history for the specfied node.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/getVersionHistory" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="revertVersion">
+      <wsdl:documentation>Revert a node to the snapshot of the specified version.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/revertVersion" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllVersions">
+      <wsdl:documentation>Delete all snapshot versions of the specified node.</wsdl:documentation>
+      <wsdlsoap:operation soapAction="http://www.alfresco.org/ws/service/authoring/1.0/deleteAllVersions" />
+      <wsdl:input>
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthoringFault">
+        <wsdlsoap:fault use="literal" name="AuthoringFault" namespace="http://www.alfresco.org/ws/service/authoring/1.0" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthoringService">
+    <wsdl:documentation>Provides support for collaborative editing of content.</wsdl:documentation>
+    <wsdl:port name="AuthoringService" binding="author:AuthoringServiceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/alfresco/api/AuthoringService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

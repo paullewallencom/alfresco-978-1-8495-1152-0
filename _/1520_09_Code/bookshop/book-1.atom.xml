@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:bs="http://www.packtpub.com/a3ws/samples/bookshop">
+   <id>urn:isbn:978-0385333849</id>
+   <updated>2010-01-14T14:20:24+0100</updated>
+   <title>Slaughterhouse-Five</title>
+	<author><name>Kurt Vonnegut</name></author>
+   <category term="fiction" scheme="http://www.packtpub.com/a3ws/bookshop/categories" />
+   <bs:isbn>978-0385333849</bs:isbn>
+   <bs:publisher>Dial Press Trade</bs:publisher>
+   <bs:price>12.99</bs:price>
+</entry>

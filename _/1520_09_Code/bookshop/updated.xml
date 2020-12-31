@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<entry
+    xmlns="http://www.w3.org/2005/Atom"
+    xmlns:app="http://www.w3.org/2007/app"
+    xmlns:bs="http://www.packtpub.com/a3ws/samples/bookshop">
+   <id>2231d10c-274f-4bdc-987c-e8f583149260</id>
+   <link rel="self"
+      href="http://localhost:8080/alfresco/service/books/978-0385333849"/>
+   <link rel="edit-media"
+      href="http://localhost:8080/alfresco/service/books/978-0385333849/content"/>
+   <updated>2010-01-20T21:38:31+0100</updated>
+  <title>Slaughterhouse-Five</title>
+	   <author><name>Kurt Vonnegut</name></author>
+	   <category term="fiction" scheme="http://www.packtpub.com/a3ws/bookshop/categories" />
+	<bs:isbn>978-0385333849</bs:isbn>
+	<bs:publisher>Dial Press Trade</bs:publisher>
+	<bs:price>13.99</bs:price>
+	    <bs:version>versionStore://version2Store/6a7e1fbf-9d76-4628-b3b2-257f65ae2f28</bs:version>
+</entry>
